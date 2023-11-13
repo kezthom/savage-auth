@@ -2,20 +2,21 @@
 
 // set up ======================================================================
 // get all the tools we need
+// 
 var express  = require('express');
 var app      = express();
-var port     = process.env.PORT || 8080;
-const MongoClient = require('mongodb').MongoClient
+var port     = process.env.PORT || 8080;// looks for open port process.env in case 8080 was not available
+const MongoClient = require('mongodb').MongoClient // mongoclient allows for making connection to mongoDB
 var mongoose = require('mongoose');
-var passport = require('passport');
+var passport = require('passport'); // authenticate requests caters toward logins, local stra
 var flash    = require('connect-flash');
-
-var morgan       = require('morgan');
+// enhance ui interaction and animations provide feedabck
+var morgan       = require('morgan'); // login library for node js for http re
 var cookieParser = require('cookie-parser');
-var bodyParser   = require('body-parser');
+var bodyParser   = require('body-parser'); // helps server read and use the data
 var session      = require('express-session');
 
-var configDB = require('./config/database.js');
+var configDB = require('./config/database.js'); // send you to login for database
 
 var db
 
